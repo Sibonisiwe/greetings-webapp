@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/greet.css">
+    <link rel="stylesheet" href="css/simple-grid.css">
+    <!-- <link rel="stylesheet" href="skeleton.css"> -->
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="">
+                <h1>Greetings Web App</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                {{#if messages.info }}
+                <span class="flashMsg">{{messages.info}}</span>
+                {{/if}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <span class="counter">{{greets.counter}}</span>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <form action="/greet" method="POST">
+                    <label for="">Name</label>
+                    <input type="text" name="user" value="" placeholder="enter 'name'" class="enterName">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <input type="radio" name="language" class="radioBtn" value="Xhosa">IsiXhosa
+                <input type="radio" name="language" class="radioBtn" value="English">English
+                <input type="radio" name="language" class="radioBtn" value="Afrikaans">Afrikaans
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+
+            <div class="col-5">
+                <button class="button-primary greetingBtn" type="submit" name="button">Greet</button>
+            </div>
+           
+       
+        </form>
+ <div class="col-5">
+                <a href ="/reset" ><button class="button-primary resetBtn" type="" name="button">Reset</button></a>
+            </div>
+             </div>
+        <br>
+
+        <div class="row">
+            <div class="col-12">
+                {{#if greets.greetName }}
+                <span class="message">{{greets.greetName}}</span>
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+
+                <a href="/greeted">Greeted names</a>
+            </div>
+
+        </div>
+
+        {{!-- <div class="row">
+        <div class="col-12">
+            <button class="button-primary resetBtn" on type="submit" name="button">reset</button>
+        </div>
+    </div>  --}}
+
+    </div>
+
+</body>
+
+</html>

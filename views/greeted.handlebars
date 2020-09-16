@@ -1,0 +1,17 @@
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Greeted Names </h1>
+
+
+            {{#each names}}
+            <ul>
+                <li><a href="/counter/{{this.name}}"> {{this.name}} </a></li>
+                
+
+            </ul>
+            {{/each}}
+
+        </div>
+    </div>
+</body>

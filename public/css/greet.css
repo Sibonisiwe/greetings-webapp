@@ -1,0 +1,139 @@
+
+
+/* .container {
+    padding-left: 1em;
+    margin-left: 1em;
+    border: 1px solid blue; 
+    background-color: white;
+    text-align-last: center; 
+}  */
+
+.counter {
+    font-weight: bold;
+    font-size: 4em;
+    color: blue;
+     
+}
+
+
+
+@media(min-width: 800px) {
+
+body{
+    margin: 0;
+    background-color: blue;
+}
+.container {
+    padding-left: 1em;
+    margin-left: 1em;
+    /* border: 1px solid blue;  */
+    background-color: white;
+    text-align-last: center; 
+}
+
+    
+  .counter {
+      font-weight: bold;
+      font-size: 3em;
+      color: blue;
+       
+  }
+  .container {  
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 100px;
+      height: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.h1 {
+    font-size: larger;
+}
+
+input[type=text],textarea {
+  width: 30%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+
+  
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 4px;
+        margin-left: 23em;
+      }
+
+      .greetingBtn {
+        background-color: aquamarine;
+        color: blue;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        float: center;
+        margin-left: 25em;
+      }
+
+      .greetingBtn:hover {
+        background-color: darkcyan;
+      }
+
+      .radioBtn {
+          cursor: pointer;
+          
+      }
+
+      .radioBtn:checked {
+        height: 20px;
+        width: 20px;
+      }
+
+      .flashMsg {
+        padding: 15px;
+        background-color: #f144389d; 
+        color: red;
+        margin-bottom: 10px;
+      }
+
+      .message {
+        padding: 10px;
+        background-color: #38f1d29d; 
+        color: blue;
+        margin-bottom: 15px;
+        font-size: x-large;
+      }
+
+      .a {
+          font-family: italic;
+          color: aquamarine;
+      }
+
+      .resetBtn {
+        background-color: aquamarine;
+        color: blue;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        float: center;
+        /* margin-right: 4em; */
+      }
+      .resetBtn:hover {
+        background-color: darkcyan;
+      }
+
+}
+
+
+
+  

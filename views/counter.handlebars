@@ -1,0 +1,19 @@
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Individual counter </h1>
+
+
+            {{#each names}}
+            <ul>
+                </li>
+                <li><a href="/counter/{{this.counter}}">  {{this.conter}} </a></li>
+
+            </ul>
+            {{/each}}
+
+            <p>{{sentence}}</p>
+
+        </div>
+    </div>
+</body>
