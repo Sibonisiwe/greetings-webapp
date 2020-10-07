@@ -1,1 +1,3 @@
-[![Build Status](https://travis-ci.com/Sibonisiwe/greetings_webapp.svg?branch=master)](https://travis-ci.com/Sibonisiwe/settings-bill-expressjs)
+
+
+[![Build Status](https://travis-ci.com/Sibonisiwe/greetings-webapp.svg?branch=master)](https://travis-ci.com/Sibonisiwe/greetings-webapp)
