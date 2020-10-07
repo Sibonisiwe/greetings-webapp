@@ -56,6 +56,10 @@ body{
     font-size: larger;
 }
 
+.a, li {
+  text-decoration: none;
+  list-style-type: none;
+}
 input[type=text],textarea {
   width: 30%;
   padding: 12px;
@@ -66,12 +70,12 @@ input[type=text],textarea {
 
 
   
-    table, th, td {
+    /* table, th, td {
         border: 1px solid black;
         border-collapse: collapse;
         padding: 4px;
         margin-left: 23em;
-      }
+      } */
 
       .greetingBtn {
         background-color: aquamarine;
