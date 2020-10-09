@@ -1,3 +1,1 @@
-[![Build Status](https://travis-ci.com/Sibonisiwe/greetings-webapp.svg?branch=master)](https://travis-ci.com/Sibonisiwe/greetings-webapp)
-
-
+[![Build Status](https://travis-ci.org/Sibonisiwe/greetings-webapp.svg?branch=master)](https://travis-ci.org/Sibonisiwe/greetings-webapp)
