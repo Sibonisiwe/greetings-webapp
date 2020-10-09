@@ -29,7 +29,7 @@ beforeEach(function _callee() {
   });
 });
 describe("The Greeted function", function () {
-  it("should be able to find a name Linda and insert if the name is not there and increment the counter", function _callee2() {
+  it("should be able to insert a namme Linda and increment the counter", function _callee2() {
     var greetings;
     return regeneratorRuntime.async(function _callee2$(_context2) {
       while (1) {
