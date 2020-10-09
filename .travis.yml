@@ -1,11 +1,11 @@
 language: node_js
 
-  env:
--DATABASE_URL || 'postgresql://codex:codex123@localhost:5432/greetings_test';
+env:
+  - DATABASE_URL || 'postgresql://codex:codex123@localhost:5432/greetings_test';
 
 
 node_js:  
-   - "12"
+  - "12"
 
 before_script:
   - psql -c 'create database greetings_test;' -U postgres
