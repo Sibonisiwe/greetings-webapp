@@ -9,15 +9,16 @@ const connectionString = process.env.DATABASE_URL || 'postgresql://codex:codex12
 const pool = new Pool({
     connectionString
 });
-
+describe("The greetings-webApp", function(){
 beforeEach(async function () {
     await pool.query("delete from greeting");
 
-})
+});
+
 describe("The Greeted function", function () {
     it("should be able to insert a namme Linda and increment the counter", async function () {
         let greetings = Greetings(pool)
-         await greetings.greeted("Linda", )
+         await greetings.greeted("Linda")
         
         assert.deepEqual([{name: "Linda"}], await greetings.getGreetedNames("Linda"));
 
@@ -88,11 +89,14 @@ describe("The getGreetedNames function", function() {
         assert.deepEqual([{name: 'Sibo'}, {name: 'Sinazo'}, {name: 'Mzi'}, {name: 'Bonolo'}], await greetings.getGreetedNames());
 
     });
+});
 
 after(function() {
     pool.end();
 });
+
 });
+
 
 
 
