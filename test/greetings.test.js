@@ -17,9 +17,9 @@ beforeEach(async function () {
 describe("The Greeted function", function () {
     it("should be able to find a name Linda and insert if the name is not there and increment the counter", async function () {
         let greetings = Greetings(pool)
-         await greetings.greeted("linda")
+         await greetings.greeted("Linda")
         
-        assert.deepEqual([{name: "linda"}], await greetings.getGreetedNames("linda"));
+        assert.deepEqual([{name: "Linda"}], await greetings.getGreetedNames("Linda"));
 
     });
 });
