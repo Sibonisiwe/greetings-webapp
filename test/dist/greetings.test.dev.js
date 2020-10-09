@@ -264,7 +264,7 @@ describe("The getGreetedNames function", function () {
       }
     });
   });
-});
-after(function () {
-  pool.end();
+  after(function () {
+    pool.end();
+  });
 });

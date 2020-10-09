@@ -12,8 +12,8 @@ const pool = new Pool({
 
 beforeEach(async function () {
     await pool.query("delete from greeting");
-});
 
+})
 describe("The Greeted function", function () {
     it("should be able to insert a namme Linda and increment the counter", async function () {
         let greetings = Greetings(pool)
@@ -88,10 +88,10 @@ describe("The getGreetedNames function", function() {
         assert.deepEqual([{name: 'Sibo'}, {name: 'Sinazo'}, {name: 'Mzi'}, {name: 'Bonolo'}], await greetings.getGreetedNames());
 
     });
-})
 
 after(function() {
     pool.end();
+});
 });
 
 
