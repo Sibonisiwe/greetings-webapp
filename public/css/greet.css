@@ -77,7 +77,7 @@ input[type=text],textarea {
         margin-left: 23em;
       } */
 
-      .greetingBtn {
+      .buttons {
         background-color: aquamarine;
         color: blue;
         padding: 12px 20px;
@@ -88,7 +88,12 @@ input[type=text],textarea {
         margin-left: 25em;
       }
 
-      .greetingBtn:hover {
+      .back {
+        float: left;
+        
+      }
+
+      .buttons:hover {
         background-color: darkcyan;
       }
 

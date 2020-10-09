@@ -105,8 +105,15 @@ app.get('/reset', async function (req, res) {
   });
 });
 
-app.get('/back', function (req, res) {
+app.get('/back', async function (req, res) {
 
+  res.render('greeted', {
+     names: await greeting.getGreetedNames()
+
+  });
+});
+
+app.get('/bckHome', function (req, res) {
   res.render('index', {
 
   });
