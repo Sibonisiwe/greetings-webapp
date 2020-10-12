@@ -27,19 +27,20 @@ module.exports = function Greetings(pool) {
   async function languageChecked(lang, userName) {
     await greeted(userName)
     // console.log(await getGreetedNames());
+    var nameG = userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
 
     if (lang === "Xhosa") {
-      return "Molo, " + userName
+      return "Molo, " + nameG
 
     }
 
     if (lang === "English") {
-      return "Hellow, " + userName
+      return "Hellow, " + nameG
 
     }
 
     if (lang === "Afrikaans") {
-      return "Hallo, " + userName
+      return "Hallo, " + nameG
     }
 
   }

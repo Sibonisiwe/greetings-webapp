@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const flash = require('express-flash');
 const session = require('express-session');
 const Greetings = require('./greetings');
-const greetings = require('./greetings');
+// const greetings = Greetings();
+const Greet = require('./greet');
 const pg = require("pg");
 const Pool = pg.Pool;
 const connectionString = process.env.DATABASE_URL || 'postgresql://codex:codex123@localhost:5432/greetings';
@@ -13,6 +14,7 @@ const pool = new Pool({
 });
 
 const greeting = Greetings(pool);
+const greets = Greet(greeting)
 const app = express();
 
 
@@ -50,79 +52,28 @@ app.get('/', async function (req, res) {
   });
 });
 
-app.post('/greet', async function (req, res) {
-  try {
-    var namesEntered = req.body.user;
-    var radioChecked = req.body.language;
+app.post('/greet', greets.greetPerson)
 
-    if (!namesEntered && !radioChecked) {
-      req.flash('info', 'Please enter a name and select a language');
-    }
-    else if (!namesEntered) {
-      req.flash('info', 'Please enter a name');
-    }
-    else if (!radioChecked) {
-      req.flash('info', 'Please select a language');
-    }
-    let greets = {
-      greetName: await greeting.languageChecked(radioChecked, namesEntered),
-      counter: await greeting.getCounter()
-    }
+  app.get('/greeted', greets.greeted)
+
+  app.get('/counter/:user', greets.counter)
+
+
+  app.get('/reset', greets.reset)
+
+
+  app.get('/back', greets.backBtn)
+
+  app.get('/bckHome', function (req, res) {
     res.render('index', {
-      greets
+
     });
-  } catch (error) {
-    console.log(error);
-  }
-});
-
-app.get('/greeted', async function (req, res) {
-  try {
-    // console.log(await greeting.getGreetedNames());
-
-    res.render('greeted', {
-      names: await greeting.getGreetedNames(),
-    });
-
-  } catch (error) {
-    console.log(error);
-  }
-});
-
-app.get('/counter/:user', async function (req, res) {
-  const userGreeted = req.params.user;
-  let personsMessage = await greeting.nameGreeted(userGreeted)
-  console.log(personsMessage)
-  res.render('counter', {
-    sentence: await personsMessage
   });
-});
 
-app.get('/reset', async function (req, res) {
-  await greeting.clear();
-  res.render('index', {
 
+
+  const PORT = process.env.PORT || 3001;
+
+  app.listen(PORT, function () {
+    console.log('App starting on port:', PORT);
   });
-});
-
-app.get('/back', async function (req, res) {
-
-  res.render('greeted', {
-     names: await greeting.getGreetedNames()
-
-  });
-});
-
-app.get('/bckHome', function (req, res) {
-  res.render('index', {
-
-  });
-});
-
-
-
-const PORT = process.env.PORT || 3001;
-
-app.listen(PORT, function () {
-  console.log('App starting on port:', PORT);
-});
