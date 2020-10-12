@@ -49,10 +49,10 @@ describe("The Greeted function", function () {
 
     it("Should be able to greet in Afrikaans", async function () {
         let greetings = Greetings(pool);
-         await greetings.languageChecked('Hallo', 'linda');
+         await greetings.languageChecked('Hallo', 'Linda');
          
        
-        assert.equal('Hallo, linda', await greetings.languageChecked('Afrikaans', 'linda'));
+        assert.equal('Hallo, Linda', await greetings.languageChecked('Afrikaans', 'linda'));
 
     });
 });
