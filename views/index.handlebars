@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/greet.css">
-    <link rel="stylesheet" href="css/simple-grid.css">
+    {{!-- <link rel="stylesheet" href="/css/greet.css">
+    <link rel="stylesheet" href="/css/simple-grid.css"> --}}
     <!-- <link rel="stylesheet" href="skeleton.css"> -->
 
 </head>
@@ -28,12 +28,22 @@
                 {{/if}}
             </div>
         </div>
+
+<div class="row">
+            <div class="col-12">
+                {{#if greets.greetName }}
+                <span class="message">{{greets.greetName}}</span>
+                {{/if}}
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-12">
                 <span class="counter">{{greets.counter}}</span>
             </div>
         </div>
 
+ 
 
         <div class="row">
 
@@ -69,13 +79,7 @@
              </div>
         <br>
 
-        <div class="row">
-            <div class="col-12">
-                {{#if greets.greetName }}
-                <span class="message">{{greets.greetName}}</span>
-                {{/if}}
-            </div>
-        </div>
+       
 
         <div class="row">
             <div class="col-12">
