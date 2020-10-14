@@ -47,10 +47,7 @@ app.use(bodyParser.json())
 app.use(express.static('public'));
 
 
-app.get('/', async function (req, res) {
-  res.render('index', {
-  });
-});
+app.get('/', greets.homeRoute)
 
 app.post('/greet', greets.greetPerson)
 
@@ -64,8 +61,10 @@ app.post('/greet', greets.greetPerson)
 
   app.get('/back', greets.backBtn)
 
-  app.get('/bckHome', function (req, res) {
-    res.render('index', {
+  app.get('/bckHome', async function (req, res) {
+ 
+
+    res.render('index', { 
 
     });
   });

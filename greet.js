@@ -1,6 +1,15 @@
 module.exports = function Greet(greeting) {
 
 
+    async function homeRoute(req, res) {
+        var greet = { counter : await greeting.getCounter()}
+
+        res.render('index', {
+            greet
+        });
+
+    }
+
     async function greetPerson(req, res) {
         var namesEntered = req.body.user;
         var radioChecked = req.body.language;
@@ -14,14 +23,15 @@ module.exports = function Greet(greeting) {
         else if (!radioChecked) {
             req.flash('info', 'Please select a language');
         } else {
-            var greets = {
+            var greet = {
                 greetName: await greeting.languageChecked(radioChecked, namesEntered),
                 counter: await greeting.getCounter()
             }
+
         }
 
         res.render('index', {
-            greets
+            greet
         });
     }
 
@@ -45,9 +55,7 @@ module.exports = function Greet(greeting) {
 
     async function reset(req, res) {
         await greeting.clear();
-        res.render('index', {
-
-        });
+        res.redirect('/');
     }
 
     async function backBtn(req, res) {
@@ -63,7 +71,8 @@ module.exports = function Greet(greeting) {
         counter,
         reset,
         backBtn,
-        greetPerson
+        greetPerson,
+        homeRoute
 
     };
 }
