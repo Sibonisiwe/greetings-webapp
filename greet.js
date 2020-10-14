@@ -13,12 +13,13 @@ module.exports = function Greet(greeting) {
         }
         else if (!radioChecked) {
             req.flash('info', 'Please select a language');
+        } else {
+            var greets = {
+                greetName: await greeting.languageChecked(radioChecked, namesEntered),
+                counter: await greeting.getCounter()
+            }
         }
 
-        let greets = {
-            greetName: await greeting.languageChecked(radioChecked, namesEntered),
-            counter: await greeting.getCounter()
-        }
         res.render('index', {
             greets
         });

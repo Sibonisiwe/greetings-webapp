@@ -109,9 +109,10 @@ input[type=text],textarea {
 
       .flashMsg {
         padding: 15px;
-        background-color: #f144389d; 
+        /* background-color: #f144389d;  */
         color: red;
         margin-bottom: 10px;
+        border: red;
       }
 
       .message {
